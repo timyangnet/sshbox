@@ -1,0 +1,45 @@
+function FindProxyForURL(url, host) {
+	var arrHosts = [
+	"youtube.com",
+	"googlevideo.com",
+	"ytimg.com",
+
+	"appspot.com",
+	"appspot.jp",
+	"blogger.com",
+	"blogspot.com",
+	"blogspot.jp",
+	"docs.google.com",
+	"talkgadget.google.com",
+	"mail.google.com",
+	"feedproxy.google.com",
+	"gstatic.com",
+	"google.com.hk",
+	"google.co.jp",
+	"evernote.com",
+
+	"facebook.com",
+	"fbcdn.net",
+	"facebook.net",
+	
+	"twitter.com",
+	"evernote.com",
+	"twitpic.com",
+	"bit.ly",
+	"j.mp",
+
+	"blip.tv",
+	"vimeo.com",
+	"wordpress.com",
+	"flipboard.com"
+	];
+
+	// dnsDomainIs
+	for (var i = 0; i < arrHosts.length; i++) {
+		if(dnsDomainIs(host, arrHosts[i])) {
+			return "SOCKS 192.168.253.253:7070";
+		};
+	};
+
+	return "DIRECT";
+};
